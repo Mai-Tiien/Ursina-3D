@@ -1,0 +1,17 @@
+from ursina import *
+
+app = Ursina(vsync=False)
+
+sky = Sky()
+
+ground = Entity(model='plane', scale=32, texture='white_cube', texture_scale=(32,32), collider='box')
+ec = EditorCamera(rotation_smoothing=10, enabled=1, rotation=(30,30,0))
+player = Entity(model='model/grove.obj', texture = 'texture/fam.png', rotation_y = -90, position = (0, 1.5))
+
+
+def update():
+    if held_keys['escape']:
+        application.quit()
+
+        
+app.run()        
